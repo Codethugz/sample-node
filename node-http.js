@@ -4,6 +4,10 @@ const server = http.createServer();
 
 const handleRequest = (req, res) => {
   const url = req.url;
+  const method = req.method;
+
+  console.log(`${method}: ${url}`);
+
   switch (url) {
     case '/':
       return renderJSON(req, res, 'Welcome to our node api');
